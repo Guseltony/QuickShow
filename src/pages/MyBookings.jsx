@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { dummyBookingData } from '../assets/assets'
 import Loading from '../components/Loading'
 import BlurCircle from '../components/BlurCircle'
@@ -9,17 +9,20 @@ const MyBookings = () => {
 
   const currency = import.meta.env.VITE_CURRENCY
 
-  const [bookings, setBookings] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
+  // const [bookings, setBookings] = useState([])
+  // const [isLoading, setIsLoading] = useState(true)
 
-  const getMyBookings = async () => {
-    setBookings(dummyBookingData)
-    setIsLoading(false)
-  }
+  // const getMyBookings = async () => {
+  //   setBookings(dummyBookingData)
+  //   setIsLoading(false)
+  // }
 
-  useEffect(() => {
-    getMyBookings()
-  }, [])
+  // useEffect(() => {
+  //   getMyBookings()
+  // }, [])
+
+  const [bookings] = useState(() => dummyBookingData)
+  const [isLoading] = useState(false)
 
 
   return !isLoading ? (
